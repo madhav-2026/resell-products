@@ -1,0 +1,13 @@
+spring:
+  application:
+    name: resell-products
+
+  data:
+    mongodb:
+      uri: mongodb://admin_reseller:admin_pwd_reseller@localhost:27017/reseller_product_db
+      database: reseller_db
+
+server:
+  port: 9090
+
+
