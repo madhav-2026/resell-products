@@ -1,4 +1,19 @@
 HELP.md
+
+# Compiled class files
+*.class
+
+# IntelliJ project files
+*.iml
+.idea/
+
+# Maven / Gradle output
+/target/
+/build/
+
+# Logs
+*.log
+
 target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/

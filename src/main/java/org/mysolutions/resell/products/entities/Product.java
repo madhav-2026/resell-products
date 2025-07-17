@@ -8,6 +8,7 @@ import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 @Document(collection = "products")
 @Data
@@ -20,11 +21,11 @@ public class Product {
     private String name;
     private String description;
     private double price;
-    private String imageUrl;
+    private String image;
     private String category;
-    private int quantity;
+    private String quantity;
     private String brand;
-    private String unit; // e.g., kg, piece
+    private List<Unit> units;
     private String status;
     private String createdBy;
     private String updatedBy;

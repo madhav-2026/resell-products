@@ -32,6 +32,10 @@ public class ProductService {
         productRepository.deleteById(id);
     }
 
+    public void deleteAllProduct() {
+        productRepository.deleteAll();
+    }
+
     private void setDate(Product product) {
         product.setCreatedDate(LocalDateTime.now().now());
         product.setUpdatedDate(LocalDateTime.now());

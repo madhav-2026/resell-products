@@ -1,5 +1,6 @@
 package org.mysolutions.resell.products.controller;
 
+import lombok.extern.slf4j.Slf4j;
 import org.mysolutions.resell.products.entities.Product;
 import org.mysolutions.resell.products.service.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/products")
+@Slf4j
 public class ProductController {
 
     @Autowired
@@ -17,6 +19,7 @@ public class ProductController {
 
     @GetMapping
     public List<Product> getAllProducts() {
+        log.info("fetching products");
         return productService.getAllProducts();
     }
 
@@ -33,6 +36,12 @@ public class ProductController {
     @DeleteMapping("/{id}")
     public ResponseEntity<Void> deleteProduct(@PathVariable String id) {
         productService.deleteProduct(id);
+        return ResponseEntity.noContent().build();
+    }
+
+    @DeleteMapping("/all-products")
+    public ResponseEntity<Void> deleteAllProduct() {
+        productService.deleteAllProduct();
         return ResponseEntity.noContent().build();
     }
 
