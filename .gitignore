@@ -1,11 +1,10 @@
 HELP.md
-
-# Compiled class files
+# Ignore compiled class files
 *.class
 
-# IntelliJ project files
-*.iml
+# IntelliJ IDEA specific ignores
 .idea/
+*.iml
 
 # Maven / Gradle output
 /target/
@@ -18,6 +17,8 @@ target/
 .mvn/wrapper/maven-wrapper.jar
 !**/src/main/**/target/
 !**/src/test/**/target/
+out/
+build/
 
 ### STS ###
 .apt_generated

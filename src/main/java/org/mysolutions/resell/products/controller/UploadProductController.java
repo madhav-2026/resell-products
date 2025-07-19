@@ -19,6 +19,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.nio.file.StandardCopyOption;
+import java.util.List;
 import java.util.UUID;
 
 @RestController
@@ -34,6 +35,7 @@ public class UploadProductController {
             @RequestParam("name") String name,
             @RequestParam("price") double price,
             @RequestParam("quantity") String quantity,
+            @RequestParam("weightOptions") List<Integer> weightOptions,
             @RequestParam("image") MultipartFile imageFile) {
 
         try {
@@ -53,7 +55,8 @@ public class UploadProductController {
             product.setName(name);
             product.setPrice(price);
             product.setQuantity(quantity);
-            product.setImage("images/" + imageName); // Important: set public path
+            product.setWeightOptions(weightOptions);
+            product.setImage("images/" + imageName);
 
             productRepository.save(product);
 

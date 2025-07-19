@@ -26,6 +26,7 @@ public class Product {
     private String quantity;
     private String brand;
     private List<Unit> units;
+    private List<Integer> weightOptions;
     private String status;
     private String createdBy;
     private String updatedBy;
