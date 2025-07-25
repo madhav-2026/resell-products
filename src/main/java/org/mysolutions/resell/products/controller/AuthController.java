@@ -39,8 +39,7 @@ public class AuthController {
         if (userOpt.isPresent()) {
             Users user = userOpt.get();
             Map<String, Object> userInfo = new HashMap<>();
-            userInfo.put("firstName", user.getFirstName());
-            userInfo.put("lastName", user.getLastName());
+            userInfo.put("name", user.getName());
             userInfo.put("address", user.getAddress());
             userInfo.put("phone", user.getPhone());
             return ResponseEntity.ok(userInfo);
@@ -68,9 +67,8 @@ public class AuthController {
     public String register(@RequestBody RegisterRequest request) {
         if (userRepository.findByPhone(request.getPhone()).isPresent()) return "User already exists";
         Users user = new Users();
-        user.setFirstName(request.getFirstName());
-        user.setLastName(request.getLastName());
         user.setPhone(request.getPhone());
+        user.setName(request.getName());
         String otp = String.valueOf(new Random().nextInt(8999) + 1000);
         user.setOtp(otp);
         user.setVerified(false);

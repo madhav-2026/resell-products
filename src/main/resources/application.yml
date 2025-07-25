@@ -14,5 +14,8 @@ twilio:
   accountSid: ACfb508642827d0701d643ac38b03e813c
   authToken: 5d20e36dfcf6bb6eadf0281dfd0b3942
   fromNumber: +17692248179
+  whatsapp:
+      from: +14155238886
+      to: +918074689114
 
 

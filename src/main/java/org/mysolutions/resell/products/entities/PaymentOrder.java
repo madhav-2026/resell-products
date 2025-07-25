@@ -7,18 +7,18 @@ import lombok.NoArgsConstructor;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
-@Document(collection = "users")
+import java.util.Date;
+import java.util.List;
+
+@Document(collection = "payment_orders")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Users {
+public class PaymentOrder {
     @Id
     private String id;
-    private String phone;
-    private String name;
-    private String otp;
-    private boolean verified;
-    private String address;
-
+    private String razorpayOrderId;
+    private String status;
+    private String paymentId;
 }

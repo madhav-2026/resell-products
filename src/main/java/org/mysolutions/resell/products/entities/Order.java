@@ -17,9 +17,16 @@ import java.util.List;
 public class Order {
     @Id
     private String id;
-    private String userPhone;
+    private String customerPhone;
+    private String customerName;
     private Date date;
-    private List<?> items;
+    private List<Product> items;
     private Double total;
     private String status;
+    private Double deliveryCharge;
+    private Double latitude;
+    private Double longitude;
+    private String address;
+    private String razorpayOrderId;
+    private String paymentId;
 }
